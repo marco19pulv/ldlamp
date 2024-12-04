@@ -39,15 +39,15 @@ RUN curl -L https://pypi.io/packages/source/s/supervisor/supervisor-${SUPERVISOR
   python3 setup.py install
 
 # Add image configuration and scripts
-ADD supporting_files/start-apache2.sh /start-apache2.sh
-ADD supporting_files/start-mysqld.sh /start-mysqld.sh
-ADD supporting_files/run.sh /run.sh
+ADD files/start-apache2.sh /start-apache2.sh
+ADD files/start-mysqld.sh /start-mysqld.sh
+ADD files/run.sh /run.sh
 # Add MySQL utils
-ADD supporting_files/mysql_init.sh /mysql_init.sh 
+ADD files/mysql_init.sh /mysql_init.sh 
 RUN chmod 755 /*.sh
-ADD supporting_files/supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
-ADD supporting_files/supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
-ADD supporting_files/supervisord.conf /etc/supervisor/supervisord.conf
+ADD files/supervisord-apache2.conf /etc/supervisor/conf.d/supervisord-apache2.conf
+ADD files/supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+ADD files/supervisord.conf /etc/supervisor/supervisord.conf
 
 # Remove pre-installed database
 RUN rm -rf /var/lib/mysql
@@ -66,7 +66,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 ENV MYSQL_PASS:-$(pwgen -s 12 1)
 # config to enable .htaccess
-ADD supporting_files/apache_default /etc/apache2/sites-available/000-default.conf
+ADD files/apache_default /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
 # Configure /app folder with sample app
