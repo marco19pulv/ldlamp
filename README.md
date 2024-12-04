@@ -20,7 +20,7 @@ cd /home/docker/ldlamp
 ```bash
 docker build -t ldlamp:latest -f ./Dockerfile .
 docker run --name ldlamp-container -d -p "3000:80" ldlamp:latest
-docker logs ldlamp:latest
+docker logs ldlamp-container
 curl "http://127.0.0.1:3000/"
 ```
 ###### Wiping
