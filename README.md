@@ -234,23 +234,6 @@ Change into the test directory and run out tests
 #### `echo "Exited with status code: $?"`
 Report back whether the tests passed or not
 
-
-## Inspiration
-This image was originally based on [dgraziotin/lamp][dgraziotin-lamp], with a few changes to make it compatible with the Concrete5 CMS.
-
-I also changed the setup to create ubuntu (well, baseimage, but you get what I'm saying) images so that this project could be as useful as possible to as many people as possible.
-
-
-## Contributing
-If you wish to submit a bug fix or feature, you can create a pull request and it will be merged pending a code review.
-
-1. Clone/fork it
-2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
-4. Test your changes using the steps in [Testing](#testing)
-5. Push to the branch (git push origin my-new-feature)
-6. Create a new Pull Request
-
 ## Building / Releasing
 Manually building and releasing can be done with the following:
 
@@ -266,9 +249,6 @@ docker push mattrayner/lamp:latest-2004
 docker push mattrayner/lamp:latest-2004-php8
 docker push mattrayner/lamp:latest-2004-php7
 ```
-
-## License
-Docker-LAMP is licensed under the [Apache 2.0 License][info-license].
 
 
 [logo]: https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg
