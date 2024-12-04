@@ -30,7 +30,7 @@ $osInfo = getOSInformation();
 <html lang=en>
 <head>
     <meta charset=utf-8>
-    <title>Hello World from Docker-LAMP</title>
+    <title>Hello World from Light-Docker-LAMP</title>
 
     <style>
         @import 'https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro';
@@ -60,12 +60,12 @@ $osInfo = getOSInformation();
 <body>
     <div class="container">
         <header>
-            <img src="https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg" alt="Docker LAMP logo" />
-            <h2>Welcome to <a href="https://github.com/mattrayner/docker-lamp" target="_blank">Docker-Lamp</a> a.k.a mattrayner/lamp</h2>
+            <img src="https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg" alt="Light Docker LAMP logo" />
+            <h2>Welcome to <a href="https://github.com/marco19pulv/ldlamp" target="_blank">Light Docker LAMP</a> a.k.a marco19pulv/ldlamp</h2>
         </header>
         <article>
             <p>
-                For documentation, <a href="https://github.com/mattrayner/docker-lamp" target="_blank">click here</a>.
+                For documentation, <a href="https://github.com/marco19pulv/ldlamp" target="_blank">click here</a>.
             </p>
         </article>
         <section>

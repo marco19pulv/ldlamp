@@ -1,6 +1,3 @@
 .gitignore
 CHANGELOG.md
-docker-compose.test.yml
-tests/
-LICENSE
 README.md
