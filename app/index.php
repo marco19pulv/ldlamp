@@ -60,7 +60,7 @@ $osInfo = getOSInformation();
 <body>
     <div class="container">
         <header>
-            <img src="https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg" alt="Light Docker LAMP logo" />
+            <img src="https://raw.githubusercontent.com/marco19pulv/ldlamp/refs/heads/main/logo.png" alt="Light Docker LAMP logo" />
             <h2>Welcome to <a href="https://github.com/marco19pulv/ldlamp" target="_blank">Light Docker LAMP</a> a.k.a marco19pulv/ldlamp</h2>
         </header>
         <article>
