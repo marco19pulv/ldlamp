@@ -30,7 +30,7 @@ docker rm ldlamp-container
 docker rmi ldlamp:latest
 ```
 
-[logo]: logo.png
+[logo]: app/logo.png
 [apache]: http://www.apache.org/
 [mysql]: https://www.mysql.com/
 [php]: http://php.net/
