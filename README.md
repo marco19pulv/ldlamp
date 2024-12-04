@@ -1,5 +1,5 @@
 # ![Light-Docker-LAMP][logo]
-Light-Docker-LAMP is a fork of mattrayner/lamp with ([Apache][apache], [MySQL][mysql] and [PHP][php]) all in one handy package.  
+Light Docker LAMP is a fork of mattrayner/lamp with [Apache][apache], [MySQL][mysql] and [PHP][php] all in one handy package.  
 [Apache][apache]: `2.4.41`  
 [MySQL][mysql]: `8.0.36`  
 [PHP][php]: `8.0.30`  
