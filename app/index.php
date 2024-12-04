@@ -31,10 +31,10 @@ $osInfo = getOSInformation();
 <html lang=en>
 <head>
     <meta charset=utf-8>
-    <title>Hello World from Light Docker LAMP</title>
+    <title>Light Docker LAMP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <?php include 'index.html'; ?>
+    <?php include 'index_body.html'; ?>
 </body>
 </html>
