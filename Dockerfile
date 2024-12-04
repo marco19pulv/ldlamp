@@ -1,10 +1,6 @@
 FROM phusion/baseimage:focal-1.1.0
-MAINTAINER Matthew Rayner <hello@rayner.io>
+LABEL Marco <marcopulv19@gmail.com>
 ENV REFRESHED_AT 2021-09-07
-
-# based on dgraziotin/lamp
-# MAINTAINER Daniel Graziotin <daniel@ineed.coffee>
-# updated for Ubuntu 20.04 LTS/PHP 7.4/PHP 8.0 Ferdinand Kasper <fkasper@modus-operandi.at>
 
 ENV DOCKER_USER_ID 501 
 ENV DOCKER_USER_GID 20
