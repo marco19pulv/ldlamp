@@ -20,7 +20,7 @@ This is the quickest way
 ```bash
 # Launch a 20.04 based image with PHP 8
 docker build -t docker-lamp:latest -f ./Dockerfile .
-docker run -p "80:80" -v ${PWD}/app:/app docker-lamp:latest-2004-php8
+docker run -p "80:80" -v ${PWD}/app:/app docker-lamp:latest
 ```
 
 ### With a Dockerfile
@@ -48,7 +48,7 @@ Docker-LAMP comes pre-installed with phpMyAdmin available from `http://DOCKER_AD
 ##### Command Line
 First, get the ID of your running container with `docker ps`, then run the below command replacing `CONTAINER_ID` and `DATABASE_NAME` with your required values:
 ```bash
-docker exec CONTAINER_ID  mysql -uroot -e "create database DATABASE_NAME"
+docker exec CONTAINER_ID mysql -uroot -e "create database DATABASE_NAME"
 ```
 
 ##### Initialization script
@@ -141,11 +141,7 @@ git clone https://github.com/mattrayner/docker-lamp.git
 cd docker-lamp
 
 # Build the images
-docker build --build-arg PHP_VERSION=8.0 -t=mattrayner/lamp:latest -f ./2004/Dockerfile .
-docker build --build-arg PHP_VERSION=8.0 -t=mattrayner/lamp:latest-2004-php8 -f ./2004/Dockerfile .
-docker build --build-arg PHP_VERSION=7.4 -t=mattrayner/lamp:latest-2004-php7 -f ./2004/Dockerfile .
-docker build --build-arg PHP_VERSION=8.0 -t=mattrayner/lamp:latest-1804-php8 -f ./1804/Dockerfile .
-docker build --build-arg PHP_VERSION=7.4 -t=mattrayner/lamp:latest-1804-php7 -f ./1804/Dockerfile .
+docker build --build-arg PHP_VERSION=8.0 -t=mattrayner/lamp:latest -f ./Dockerfile .
 
 # Run the image as a container
 docker run -d -p "3000:80" mattrayner/lamp:latest
@@ -197,7 +193,7 @@ docker push mattrayner/lamp:latest-2004-php7
 ```
 
 
-[logo]: https://cdn.rawgit.com/mattrayner/docker-lamp/831976c022782e592b7e2758464b2a9efe3da042/docs/logo.svg
+[logo]: logo.svg
 
 [apache]: http://www.apache.org/
 [mysql]: https://www.mysql.com/
