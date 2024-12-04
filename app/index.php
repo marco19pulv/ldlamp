@@ -26,57 +26,15 @@ function getOSInformation()
  }
 $osInfo = getOSInformation();
 ?>
+
 <!doctype html>
 <html lang=en>
 <head>
     <meta charset=utf-8>
     <title>Hello World from Light Docker LAMP</title>
-
-    <style>
-        @import 'https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro';
-
-        body { font-family: 'Raleway', sans-serif; }
-        h2 { font-family: 'Montserrat', sans-serif; }
-        pre {
-            font-family: 'Source Code Pro', monospace;
-
-            padding: 16px;
-            overflow: auto;
-            font-size: 85%;
-            line-height: 1.45;
-            background-color: #f7f7f7;
-            border-radius: 3px;
-
-            word-wrap: normal;
-        }
-
-        .container {
-            max-width: 1024px;
-            width: 100%;
-            margin: 0 auto;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://raw.githubusercontent.com/marco19pulv/ldlamp/refs/heads/main/logo.png" alt="Light Docker LAMP logo" />
-            <h2>Welcome to <a href="https://github.com/marco19pulv/ldlamp" target="_blank">Light Docker LAMP</a> a.k.a marco19pulv/ldlamp</h2>
-        </header>
-        <article>
-            <p>
-                For documentation, <a href="https://github.com/marco19pulv/ldlamp" target="_blank">click here</a>.
-            </p>
-        </article>
-        <section>
-            <pre>
-OS: <?php echo $osInfo['pretty_name']; ?><br/>
-Apache: <?php echo apache_get_version(); ?><br/>
-MySQL Version: <?php echo $db->getAttribute( PDO::ATTR_SERVER_VERSION ); ?><br/>
-PHP Version: <?php echo phpversion(); ?><br/>
-phpMyAdmin Version: <?php echo getenv('PHPMYADMIN_VERSION'); ?>
-            </pre>
-        </section>
-    </div>
+    <?php include 'index.html'; ?>
 </body>
 </html>

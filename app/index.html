@@ -1,0 +1,22 @@
+<div class="container">
+    <header>
+        <img src="https://raw.githubusercontent.com/marco19pulv/ldlamp/refs/heads/main/logo.png"
+            alt="Light Docker LAMP logo" />
+        <h2>Welcome to <a href="https://github.com/marco19pulv/ldlamp" target="_blank">Light Docker LAMP</a> a.k.a
+            marco19pulv/ldlamp</h2>
+    </header>
+    <article>
+        <p>
+            For documentation, <a href="https://github.com/marco19pulv/ldlamp" target="_blank">click here</a>.
+        </p>
+    </article>
+    <section>
+        <pre>
+OS: <?php echo $osInfo['pretty_name']; ?><br/>
+Apache: <?php echo apache_get_version(); ?><br/>
+MySQL Version: <?php echo $db->getAttribute( PDO::ATTR_SERVER_VERSION ); ?><br/>
+PHP Version: <?php echo phpversion(); ?><br/>
+phpMyAdmin Version: <?php echo getenv('PHPMYADMIN_VERSION'); ?>
+        </pre>
+    </section>
+</div>

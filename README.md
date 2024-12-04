@@ -9,10 +9,19 @@ Light Docker LAMP is a fork of mattrayner/lamp with [Apache][apache], [MySQL][my
 
 ```bash
 git clone https://github.com/marco19pulv/ldlamp.git
-cd ldlamp
+cd /home/docker/ldlamp
+```
+
+```bash
 docker build -t ldlamp:latest -f ./Dockerfile .
-docker run -d -p "3000:80" ldlamp:latest
+docker run --name ldlamp-container -d -p "3000:80" ldlamp:latest 
 curl "http://0.0.0.0:3000/"
+```
+
+```bash
+docker stop ldlamp-container
+docker rm ldlamp-container
+docker rmi ldlamp:latest
 ```
 
 [logo]: logo.png
