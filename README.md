@@ -13,16 +13,6 @@ Docker-LAMP is a set of docker images that include the phusion baseimage (18.04 
 [PHP][php] : `8.0.30`
 [phpMyAdmin][phpmyadmin] : `5.1.1`
 
-
-## Using the image
-### On the command line
-This is the quickest way
-```bash
-# Launch a 20.04 based image with PHP 8
-docker build -t docker-lamp:latest -f ./Dockerfile .
-docker run -p "80:80" -v ${PWD}/app:/app docker-lamp:latest
-```
-
 ### With a Dockerfile
 ```docker
 FROM mattrayner/lamp:latest-2004-php8
@@ -137,20 +127,20 @@ ldi 3000 3306
 ### Building and running
 ```bash
 # Clone the project from Github
-git clone https://github.com/mattrayner/docker-lamp.git
-cd docker-lamp
+git clone https://github.com/marco19pulv/m19p-docker-lamp.git
+cd m19p-docker-lamp
 
 # Build the images
-docker build --build-arg PHP_VERSION=8.0 -t=mattrayner/lamp:latest -f ./Dockerfile .
+docker build -t docker-lamp:latest -f ./Dockerfile .
 
 # Run the image as a container
-docker run -d -p "3000:80" mattrayner/lamp:latest
+docker run -d -p "3000:80" docker-lamp:latest
 
 # Sleep to allow the container to boot
 sleep 30
 
 # Curl out the contents of our new container
-curl "http://$(docker-machine ip):3000/"
+curl "http://0.0.0.0:3000/"
 ```
 
 ### Testing
