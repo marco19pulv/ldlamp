@@ -1,7 +1,7 @@
 # ![Light-Docker-LAMP][logo]
 Light Docker LAMP is a fork of mattrayner/lamp with [Apache][apache], [MySQL][mysql] and [PHP][php] all in one handy package.  
 
-#### Versions
+### Versions
 [Apache][apache]: `2.4.41`  
 [MySQL][mysql]: `8.0.36`  
 [PHP][php]: `8.0.30`  
@@ -9,15 +9,17 @@ Light Docker LAMP is a fork of mattrayner/lamp with [Apache][apache], [MySQL][my
 
 <!-- END doctoc -->
 
-###### Building
+### Deploying
+
+###### Cloning
 ```bash
 git clone https://github.com/marco19pulv/ldlamp.git
 cd /home/docker/ldlamp
 ```
-###### Deploying
+###### Building
 ```bash
 docker build -t ldlamp:latest -f ./Dockerfile .
-docker run --name ldlamp-container -d -p "3000:80" ldlamp:latest 
+docker run --name ldlamp-container -d -p "3000:80" ldlamp:latest
 curl "http://0.0.0.0:3000/"
 ```
 ###### Wiping
