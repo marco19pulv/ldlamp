@@ -30,7 +30,7 @@ $osInfo = getOSInformation();
 <html lang=en>
 <head>
     <meta charset=utf-8>
-    <title>Hello World from Light-Docker-LAMP</title>
+    <title>Hello World from Light Docker LAMP</title>
 
     <style>
         @import 'https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Code+Pro';
