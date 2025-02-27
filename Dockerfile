@@ -71,7 +71,7 @@ RUN a2enmod rewrite
 
 # Configure /app folder with sample app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
-ADD app/ /app
+ADD app_finance/ /app
 
 #Environment variables to configure php
 ENV PHP_UPLOAD_MAX_FILESIZE 10M
