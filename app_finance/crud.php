@@ -19,8 +19,8 @@ if ($_GET['action'] == 'load_accounts') {
 
 // Create account
 if ($_GET['action'] == 'create_account') {
-    $stmt = $pdo->prepare("INSERT INTO accounts (account_name, balance, currency) VALUES (?, ?, ?)");
-    $stmt->execute([$_POST['account_name'], $_POST['balance'], $_POST['currency']]);
+    $stmt = $pdo->prepare("INSERT INTO accounts (account_name, balance) VALUES (?, ?)");
+    $stmt->execute([$_POST['account_name'], $_POST['balance']]);
 }
 
 // Load transactions
@@ -32,7 +32,15 @@ if ($_GET['action'] == 'load_transactions') {
 // Create transaction
 if ($_GET['action'] == 'create_transaction') {
     $stmt = $pdo->prepare("INSERT INTO transactions (transaction_type, transaction_category, account_from, account_to, amount, text, transaction_date) 
-                           VALUES (?, ?, ?, ?, ?, ?, NOW())");
-    $stmt->execute([$_POST['transaction_type'], $_POST['transaction_category'], $_POST['account_from'], $_POST['account_to'], $_POST['amount'], $_POST['text']]);
+                           VALUES (?, ?, ?, ?, ?, ?, ?)");
+    $stmt->execute([
+        $_POST['transaction_type'], 
+        $_POST['transaction_category'], 
+        $_POST['account_from'], 
+        $_POST['account_to'], 
+        $_POST['amount'], 
+        $_POST['text'], 
+        $_POST['transaction_date'] ?: NULL
+    ]);
 }
 ?>

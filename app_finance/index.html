@@ -15,7 +15,6 @@
         <form id="accountForm">
             <input type="text" id="account_name" name="account_name" placeholder="Account Name" required>
             <input type="number" id="balance" name="balance" placeholder="Balance" required>
-            <input type="text" id="currency" name="currency" placeholder="Currency" required>
             <button type="submit">Add Account</button>
         </form>
         <h3>Accounts List</h3>
@@ -32,6 +31,7 @@
             <select name="account_from" id="account_from" required></select>
             <select name="account_to" id="account_to" required></select>
             <textarea name="text" placeholder="Description"></textarea>
+            <input type="date" id="transaction_date" name="transaction_date">
             <button type="submit">Add Transaction</button>
         </form>
         <h3>Transactions List</h3>
