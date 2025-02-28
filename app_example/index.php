@@ -1,3 +1,4 @@
+<!----------------------------- PHP SCRIPT ----------------------------->
 <?php
 $db = new PDO('mysql:host=localhost', 'root', null);
 
@@ -27,14 +28,21 @@ function getOSInformation()
 $osInfo = getOSInformation();
 ?>
 
+
+
+<!----------------------------- HTML CODE ----------------------------->
 <!doctype html>
+
 <html lang=en>
+
 <head>
     <meta charset=utf-8>
     <title>Light Docker LAMP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <?php include 'index_body.html'; ?>
 </body>
+
 </html>

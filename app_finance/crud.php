@@ -8,48 +8,31 @@ try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    die("Connection error: " . $e->getMessage());
 }
 
-// CREATE account
-if (isset($_POST['create_account'])) {
-    $name = $_POST['account_name'];
-    $balance = $_POST['balance'];
-    $currency = $_POST['currency'];
-    
-    $sql = "INSERT INTO accounts (account_name, balance, currency) VALUES (?, ?, ?)";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$name, $balance, $currency]);
-    echo "Account created successfully!";
-}
-
-// CREATE transaction
-if (isset($_POST['create_transaction'])) {
-    $type = $_POST['transaction_type'];
-    $category = $_POST['transaction_category'];
-    $from = $_POST['account_from'];
-    $to = $_POST['account_to'];
-    $amount = $_POST['amount'];
-    $text = $_POST['text'];
-    
-    $sql = "INSERT INTO transactions (transaction_type, transaction_category, account_from, account_to, amount, text, transaction_date) 
-            VALUES (?, ?, ?, ?, ?, ?, NOW())";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$type, $category, $from, $to, $amount, $text]);
-    echo "Transaction created successfully!";
-}
-
-// Load accounts for dropdown
-if (isset($_GET['action']) && $_GET['action'] == 'load_accounts') {
-    $sql = "SELECT * FROM accounts";
-    $stmt = $pdo->query($sql);
+// Load accounts
+if ($_GET['action'] == 'load_accounts') {
+    $stmt = $pdo->query("SELECT * FROM accounts");
     echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+}
+
+// Create account
+if ($_GET['action'] == 'create_account') {
+    $stmt = $pdo->prepare("INSERT INTO accounts (account_name, balance, currency) VALUES (?, ?, ?)");
+    $stmt->execute([$_POST['account_name'], $_POST['balance'], $_POST['currency']]);
 }
 
 // Load transactions
-if (isset($_GET['action']) && $_GET['action'] == 'load_transactions') {
-    $sql = "SELECT * FROM transactions";
-    $stmt = $pdo->query($sql);
+if ($_GET['action'] == 'load_transactions') {
+    $stmt = $pdo->query("SELECT * FROM transactions");
     echo json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
+}
+
+// Create transaction
+if ($_GET['action'] == 'create_transaction') {
+    $stmt = $pdo->prepare("INSERT INTO transactions (transaction_type, transaction_category, account_from, account_to, amount, text, transaction_date) 
+                           VALUES (?, ?, ?, ?, ?, ?, NOW())");
+    $stmt->execute([$_POST['transaction_type'], $_POST['transaction_category'], $_POST['account_from'], $_POST['account_to'], $_POST['amount'], $_POST['text']]);
 }
 ?>

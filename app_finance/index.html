@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Finance Management</h1>
+
+    <!-- Accounts Section -->
+    <div id="accounts">
+        <h2>Accounts</h2>
+        <form id="accountForm">
+            <input type="text" id="account_name" name="account_name" placeholder="Account Name" required>
+            <input type="number" id="balance" name="balance" placeholder="Balance" required>
+            <input type="text" id="currency" name="currency" placeholder="Currency" required>
+            <button type="submit">Add Account</button>
+        </form>
+        <h3>Accounts List</h3>
+        <table id="accountsTable"></table>
+    </div>
+
+    <!-- Transactions Section -->
+    <div id="transactions">
+        <h2>Transactions</h2>
+        <form id="transactionForm">
+            <input type="text" id="transaction_type" name="transaction_type" placeholder="Type" required>
+            <input type="text" id="transaction_category" name="transaction_category" placeholder="Category" required>
+            <input type="number" id="amount" name="amount" placeholder="Amount" required>
+            <select name="account_from" id="account_from" required></select>
+            <select name="account_to" id="account_to" required></select>
+            <textarea name="text" placeholder="Description"></textarea>
+            <button type="submit">Add Transaction</button>
+        </form>
+        <h3>Transactions List</h3>
+        <table id="transactionsTable"></table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
