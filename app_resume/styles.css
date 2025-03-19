@@ -145,6 +145,12 @@ ol, ul {
   padding: 0 0.5rem;
   margin: 0.25rem; }
 
+li { font-weight: bold }
+
+.li-nobold { font-weight: normal }
+
+.li-inline { display: inline-flex; }
+
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
@@ -177,7 +183,8 @@ img { max-width: 100%; }
 .h5-object-inline {
   display: inline-block;
   font-weight: bold;  }
-.h6-subject-minor-skills,
+.h6-subject-soft-skills,
+.h6-subject-hard-skills,
 .h6-subject-empl,
 .h6-subject-educ,
 .h6-subject-proj,
@@ -203,18 +210,16 @@ img { max-width: 100%; }
 
 .redir { margin-left: 0.25rem; }
 
-.toggleShow { height: 20px; }
-
 /* ----- SKILLS ----- */
 /* Improve cursor for clickable items */
-.h6-subject-minor-skills {
+.h6-subject-hard-skills {
   cursor: pointer;
   padding: 0rem 0;
   /* Optional: add some padding for better clickability */
   transition: background-color 0.333s ease;
   /* Smooth transition for background change */ }
 /* Hide the <ul> elements by default, using opacity and max-height */
-.h6-subject-minor-skills+ul {
+.h6-subject-hard-skills+ul {
   display: block;
   /* Maintain block display to preserve space */
   opacity: 0;
@@ -226,8 +231,8 @@ img { max-width: 100%; }
   transition: opacity 0.333s ease, max-height 0.333s ease;
   /* Smooth transitions */ }
 /* Display the <ul> when the h6-subject is hovered or active */
-.h6-subject-minor-skills:hover+ul,
-.h6-subject-minor-skills.active+ul {
+.h6-subject-hard-skills:hover+ul,
+.h6-subject-hard-skills.active+ul {
   opacity: 1;
   /* Make it visible */
   max-height: 1000px;
