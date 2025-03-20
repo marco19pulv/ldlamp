@@ -32,11 +32,7 @@ docker rmi ldlamp:latest
 
 ###### STARTING
 ```bash
-Edit ROW74 of Dockerfile to select the app to install on webserver
-```
-
-###### CONFIGURING
-```bash
+edit ROW74 of Dockerfile to select the app to be installed on webserver
 docker start ldlamp-container
 ```
 
