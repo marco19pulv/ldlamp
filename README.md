@@ -30,6 +30,16 @@ docker rm ldlamp-container
 docker rmi ldlamp:latest
 ```
 
+###### STARTING
+```bash
+Edit ROW74 of Dockerfile to select the app to install on webserver
+```
+
+###### CONFIGURING
+```bash
+docker start ldlamp-container
+```
+
 [logo]: logo.png
 [apache]: http://www.apache.org/
 [mysql]: https://www.mysql.com/
