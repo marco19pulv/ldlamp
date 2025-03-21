@@ -20,12 +20,12 @@ if [ "$RUN_GIT" = true ]; then
   git push
 fi
 
-# 2. Stop container
+# 2. Stop and remove container
 sudo docker stop ldlamp-container
+sudo docker rm ldlamp-container
 
 # 3. Cleanup (if requested)
 if [ "$RUN_CLEAN" = true ]; then
-  sudo docker rm ldlamp-container  # Remove container
   sudo docker rmi ldlamp:latest    # Remove image
   sudo docker volume prune -f      # Remove all unused volumes
   sudo docker network prune -f     # Remove all unused networks
