@@ -10,7 +10,6 @@ Light Docker LAMP is a fork of mattrayner/lamp with [Apache][apache], [MySQL][my
 <!-- END doctoc -->
 
 ### Deploying
-
 ###### Cloning
 ```bash
 git clone https://github.com/marco19pulv/ldlamp.git
@@ -18,22 +17,21 @@ cd /home/docker/ldlamp
 ```
 ###### Building
 ```bash
-docker build -t ldlamp:latest -f ./Dockerfile .
-docker run --name ldlamp-container -d -p "3000:80" ldlamp:latest
-docker logs ldlamp-container
+docker build -t ldlamp -f ./Dockerfile .             #Image
+docker run --name ldlamp -d -p "3000:80" ldlamp      #Container
+docker logs ldlamp  
 curl "http://127.0.0.1:3000/"
 ```
 ###### Wiping
 ```bash
-docker stop ldlamp-container
-docker rm ldlamp-container
-docker rmi ldlamp:latest
+docker stop ldlamp
+docker rm ldlamp    #Container
+docker rmi ldlamp   #Image
 ```
-
 ###### STARTING
 ```bash
 edit ROW74 of Dockerfile to select the app to be installed on webserver
-docker start ldlamp-container
+docker start ldlamp
 ```
 
 [logo]: logo.png
